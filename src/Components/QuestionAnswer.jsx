@@ -1,19 +1,14 @@
-import React from 'react';
-import { Header } from 'semantic-ui-react';
+import React, { useEffect, useState } from 'react';
+import { Header, Button } from 'semantic-ui-react';
 import Question from './Question'
-const testData = {
-    question: "Why are you?",
-    answers: [
-        "I am fine",
-        "Sorry",
-        "Thank You",
-        "Welcome"
-    ]
-}
-const QuestionAnswer = () => {
+
+const QuestionAnswer = (props) => {
+    
     return (
         <>
-            <Question data={testData}></Question>
+            
+            <Question index={props.index} id={props.id} name={props.name} meaning={props.meaning} answers={props.answers} handleSelected={props.handleSelected}></Question>
+            
         </>
     )
 }
