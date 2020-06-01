@@ -4,7 +4,7 @@ import MainPage from "./Components/MainPage"
 import Lesson from "./Components/Lesson"
 import Quiz from "./Components/Quiz"
 import Result from "./Components/Result"
-import { Switch, Route, Router } from 'react-router-dom';
+import { Switch, Route, Router, Redirect } from 'react-router-dom';
 import history from "./utils/history"
 import {useAuth0} from "./react-auth0-spa"
 import PrivateRoute from "./Components/PrivateRoute"
@@ -19,6 +19,7 @@ const App = () => {
         <PrivateRoute path="/lesson" component={Lesson} />
         <PrivateRoute path="/quiz" component={Quiz} />
         <PrivateRoute path="/results" component={Result} />
+        <Redirect to='/'></Redirect>
       </Switch>
     </Router>
   )

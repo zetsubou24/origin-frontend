@@ -1,10 +1,22 @@
 import React, { Component } from 'react';
 import {Link} from 'react-router-dom'
-import {Button} from 'semantic-ui-react'
+import {Button, Card, Image, Header, Segment} from 'semantic-ui-react'
+import "./login.css"
 
 const Login = () => {
     return (
-        <Button as={Link} color="green" to="/home">Login</Button>
+        <>
+            <Header as={Segment} inverted size="huge" content='Origin Vocabulary App' />   
+            <Card.Group centered className="container">
+                <Card>
+                    <Card.Content>
+                        <Card.Header>Improve your vocabulary today!</Card.Header>
+                        <Image src="main.png"></Image>
+                    </Card.Content>
+                <Button as={Link} className={"login"} color="green" to="/home">Login</Button>
+                </Card>
+            </Card.Group>
+        </>
     )
 }
 
